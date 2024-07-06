@@ -1,0 +1,99 @@
+ Entorno de desarrollo
+ framework  = conj de herramientas, librerias, estruturas, para facilitar el proceso de trabajo.-
+    *   Ágil
+    *   Reutilizable
+    *   ofrece estructura sólidos
+ --------
+|M  V  C |
+|M  T  V |
+ --------
+ 
+El patrón de arquitectura Model-View-Controller (MVC) es una estructura comúnmente utilizada en el desarrollo de software para separar la lógica de la aplicación en tres componentes principales: el Modelo, la Vista y el Controlador.
+
+1. **Modelo (Model)**:
+   - El modelo representa los datos y la lógica de negocio de la aplicación.
+   - Se encarga de interactuar con la base de datos o almacenamiento persistente.
+   - Define cómo se estructuran y manipulan los datos.
+   - Suele estar implementado como clases que encapsulan la lógica de acceso a los datos.
+
+2. **Vista (View)**:
+   - La vista es la interfaz de usuario con la que interactúa el usuario final.
+   - Muestra la información al usuario de manera que sea comprensible y fácil de interpretar.
+   - Generalmente no realiza lógica de negocio; su función principal es presentar los datos al usuario.
+
+3. **Controlador (Controller)**:
+   - El controlador actúa como intermediario entre la vista y el modelo.
+   - Responde a las acciones del usuario y realiza las operaciones necesarias.
+   - Contiene la lógica de la aplicación, coordinando las interacciones entre la vista y el modelo.
+   - En muchos frameworks, el controlador se define como funciones o métodos que manejan las peticiones del usuario y las dirigen hacia el modelo adecuado.
+
+### Proceso en MVC:
+
+- **1. Petición del usuario**:
+  Cuando el usuario interactúa con la aplicación (por ejemplo, haciendo clic en un enlace o enviando un formulario), se genera una petición.
+
+- **2. Controlador**:
+  El controlador recibe esta petición. Su función es determinar qué acción debe tomar en respuesta a la petición del usuario.
+
+- **3. Modelo**:
+  El controlador interactúa con el modelo. Puede solicitar datos específicos o activar operaciones en el modelo, según la acción solicitada por el usuario.
+
+- **4. Vista**:
+  Una vez que el controlador ha realizado las operaciones necesarias con el modelo, selecciona la vista adecuada para mostrar los resultados al usuario. La vista se actualiza con los datos proporcionados por el controlador.
+
+- **5. Respuesta al usuario**:
+  Finalmente, la vista actualizada se envía al usuario como respuesta a su petición original.
+
+### Ventajas del MVC:
+
+- **Separación de preocupaciones**: Permite dividir la aplicación en partes que se ocupan de áreas específicas (datos, presentación, lógica).
+- **Reutilización de código**: Cada componente (modelo, vista, controlador) puede reutilizarse en diferentes partes de la aplicación.
+- **Facilidad de mantenimiento**: Cambios en una parte del sistema no deberían afectar a otras partes si se respeta la separación adecuada.
+- **Escalabilidad**: Facilita la escalabilidad al modularizar la aplicación y permitir un desarrollo paralelo.
+
+El uso de MVC facilita el desarrollo de aplicaciones robustas y escalables al proporcionar una estructura clara y organizada para el código.
+---------------------------------------------------------------------------------
+
+El patrón de arquitectura Model-Template-View (MTV) es muy similar al Modelo-Vista-Controlador (MVC), pero se utiliza en algunos frameworks de desarrollo web, especialmente asociados con tecnologías como Python y Django. Aquí te explico cómo funciona y las diferencias principales con MVC:
+
+1. **Modelo (Model)**:
+   - Al igual que en MVC, el modelo en MTV representa los datos y la lógica de negocio de la aplicación.
+   - Interactúa con la base de datos u otro mecanismo de almacenamiento persistente.
+   - Define la estructura de los datos y las operaciones que se pueden realizar sobre ellos.
+
+2. **Template (Template)**:
+   - El template en MTV es equivalente a la vista en MVC, pero se enfoca más en la presentación de los datos que en la lógica de presentación.
+   - Define cómo se muestra la información al usuario final.
+   - Puede contener marcadores o lenguajes de plantilla para insertar datos dinámicos generados por el controlador o la lógica de la aplicación.
+
+3. **Vista (View)**:
+   - En MTV, la vista es a menudo considerada como el controlador en MVC.
+   - La vista (o view) en MTV no contiene lógica de negocio, sino que simplemente delega la presentación a los templates.
+   - Puede manejar las peticiones del usuario y coordinar la interacción con el modelo, preparando los datos necesarios para la presentación.
+
+### Proceso en MTV:
+
+- **1. Petición del usuario**:
+  Cuando el usuario interactúa con la aplicación web, se envía una petición al servidor.
+
+- **2. Vista (View)**:
+  La vista en MTV recibe la petición del usuario. Su función es determinar qué acción tomar y cómo responder.
+
+- **3. Modelo (Model)**:
+  La vista en MTV interactúa con el modelo para obtener los datos necesarios. Puede realizar consultas a la base de datos u otras operaciones relacionadas con los datos.
+
+- **4. Template (Template)**:
+  Una vez que la vista tiene los datos del modelo, selecciona el template adecuado para presentar los datos al usuario.
+
+- **5. Respuesta al usuario**:
+  Finalmente, el template se renderiza con los datos proporcionados por la vista y se envía como respuesta al usuario.
+
+### Diferencias con MVC:
+
+- **Separación de roles**: En MVC, el controlador maneja las peticiones y la lógica de la aplicación, mientras que la vista se encarga de la presentación. En MTV, la vista asume más responsabilidades similares al controlador en MVC.
+  
+- **Enfoque en plantillas**: MTV hace un énfasis claro en el uso de templates para la presentación, mientras que en MVC, la vista puede involucrar más lógica de presentación además de simplemente mostrar datos.
+
+- **Uso común**: MVC es más ampliamente reconocido y utilizado en muchos frameworks, mientras que MTV es específico de frameworks como Django en Python.
+
+Ambos patrones tienen como objetivo principal separar las preocupaciones en el desarrollo de aplicaciones web, facilitando la mantenibilidad, escalabilidad y reutilización del código.
